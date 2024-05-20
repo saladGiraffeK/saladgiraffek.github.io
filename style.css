@@ -4,13 +4,16 @@
 }
 
 input[type="number"] {
-    padding: 8px 12px;
+    padding: 8px 0; /* 上下の余白のみ */
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: calc(50% - 2px); /* 横幅を2倍にして、セルの間の余白はなし */
+    width: 50%; /* 横幅を2倍にして */
     max-width: 5em; /* 最大幅を5桁に制限 */
+    text-align: center; /* テキストを中央寄せ */
+    margin: 0; /* テキストボックスの外側の余白を0に設定 */
 }
+
 
 
 button {
