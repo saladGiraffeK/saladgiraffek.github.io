@@ -1,19 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
     var calculateButton = document.getElementById("calculateButton");
     calculateButton.addEventListener("click", function() {
-        calculateMultiplication();
+        calculateAddition();
     });
 
-    function calculateMultiplication() {
-        var product = 1;
+    function calculateAddition() {
+        var sum = 0;
         for (var i = 0; i < 10; i++) {
             for (var j = 0; j < 5; j++) {
-                var inputValue = parseFloat(document.getElementById("input_" + i + "_" + j).value);
-                product *= inputValue;
+                var inputValue = parseFloat(document.getElementById("input_" + i + "_" + j).value) || 0;
+                sum += inputValue;
             }
         }
-        document.getElementById("result").innerHTML = "Multiplication result: " + product;
+        document.getElementById("result").innerHTML = "Addition result: " + sum;   
     }
+
+    // function calculateMultiplication() {
+    //     var product = 1;
+    //     for (var i = 0; i < 10; i++) {
+    //         for (var j = 0; j < 5; j++) {
+    //             var inputValue = parseFloat(document.getElementById("input_" + i + "_" + j).value);
+    //             product *= inputValue;
+    //         }
+    //     }
+    //     document.getElementById("result").innerHTML = "Multiplication result: " + product;
+    // }
 
     // テキストボックスを縦10横5の表に追加する
     var gridContainer = document.getElementById("gridContainer");
