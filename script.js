@@ -21,20 +21,23 @@ document.addEventListener("DOMContentLoaded", function() {
         var row = document.createElement("tr");
         for (var j = 0; j < 5; j++) {
             var cell = document.createElement("td");
-            var input = document.createElement("input");
-            input.type = "number";
-            input.id = "input_" + i + "_" + j;
-            input.setAttribute("min", "0"); // 最小値を0に設定
             if (j > 0) {
-                input.setAttribute("step", "1000"); // 2列目以降のテキストボックスに1000単位での増減を設定
-                input.setAttribute("min", "0");
-                input.addEventListener("input", function() {
-                    if (this.value % 1000 !== 0) {
-                        this.value = Math.round(this.value / 1000) * 1000;
-                    }
-                });
+                var select = document.createElement("select");
+                for (var k = 1; k <= 20; k++) { // 1から20の値を追加する
+                    var option = document.createElement("option");
+                    option.text = k * 1000;
+                    option.value = k * 1000;
+                    select.appendChild(option);
+                }
+                select.id = "input_" + i + "_" + j;
+                cell.appendChild(select);
+            } else {
+                var input = document.createElement("input");
+                input.type = "number";
+                input.id = "input_" + i + "_" + j;
+                input.setAttribute("min", "0"); // 最小値を0に設定
+                cell.appendChild(input);
             }
-            cell.appendChild(input);
             row.appendChild(cell);
         }
         gridContainer.appendChild(row);
