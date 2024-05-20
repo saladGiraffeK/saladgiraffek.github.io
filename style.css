@@ -8,7 +8,10 @@ input[type="number"] {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 25%; /* 幅を1/4に設定 */
+    max-width: 5em; /* 最大幅を5桁に制限 */
 }
+
 
 button {
     padding: 10px 20px;
