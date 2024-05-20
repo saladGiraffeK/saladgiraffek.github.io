@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     var calculateButton = document.getElementById("calculateButton");
     calculateButton.addEventListener("click", function() {
-        calculateProbability();
+        calculateMultiplication();
     });
 
-    function calculateProbability() {
-        var inputValue = document.getElementById("inputNumber").value;
-        // ここに計算処理を追加
-        var result = "計算結果: " + inputValue; // 仮の結果
-        document.getElementById("result").innerHTML = result;
+    function calculateMultiplication() {
+        var input1 = parseFloat(document.getElementById("inputNumber1").value);
+        var input2 = parseFloat(document.getElementById("inputNumber2").value);
+        var input3 = parseFloat(document.getElementById("inputNumber3").value);
+
+        var result = input1 * input2 * input3;
+        document.getElementById("result").innerHTML = "Multiplication result: " + result;
     }
 });
